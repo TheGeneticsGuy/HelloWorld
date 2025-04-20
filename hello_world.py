@@ -218,8 +218,10 @@ def thinking_animation( custom_message='hmmm' ):
 
 # Method:           silfra_terminal(string)
 # What it Does:     Builds an ASCII image about going to the Silfra Fissue in Island
+# Purpose:          Offer diverse experience in the adventure!
 def silfra_terminal(name):
-    print("""
+    # Using RAW string with 'r' as it was having trouble interpreting the escaped backslashes
+    print(r"""
     ~~~
      ~ ~~~
     ~~~   _____
