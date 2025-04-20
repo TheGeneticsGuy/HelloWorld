@@ -56,8 +56,34 @@ def hello_world( repeat_adventure ):
             print()
             print(f'That\'s ok, {name}, you\'re the boss!')
             print()
-            thinking_animatioin()
+            print('Thinking of what to do next' , end='' , flush=True) # Essentially we are printing a message, but not going to a new line.
+            thinking_animation()
+            print("I got it!!!")
+            time.sleep(1)
+            print()
 
+            # Visit Iceland!!!
+            while True:
+                response = input(f"{name}, Would you like to visit Iceland? (y/n): ").lower()
+                if response in error_table:
+                    break
+                print(error_message)
+
+            if response == 'y':
+                silfra_terminal ( name )
+                print('Entering Web Wormhole!')
+
+                #Let's build the fissue webpage!
+                build_webpage_silfra(name)
+                time.sleep(1)
+                print()
+                hello_world( True ) # Start Over!
+
+
+            else:
+                print('We hope you had an EPIC adventure to see Hello World!')
+                print()
+                hello_world( True ) # Start Over!
 
     else:
         print("Keeping it classic. I like it! Until next time!")
@@ -130,18 +156,83 @@ def build_webpage( name=""):
     webbrowser.open("file://" + os.path.realpath("hello_world.html"))
     print("Launching the Hello World webpage!")
 
-def thinking_animatioin():
-    print('Thinking of what to do next' , end='' , flush=True) # Essentially we are printing a message, but not going to a new line.
+# Method:           build_webpage_silfra(string)
+# What it Does:     Generates the HTML and styling code for the Iceland destination
+# Purpose:          Really up the Ante with this Hello World Stuff!
+def build_webpage_silfra(name=""):
+    html_content = f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Silfra Fissure Adventure</title>
+        <style>
+            body {{
+                background: linear-gradient(to bottom, #1e3c72, #2a5298);
+                color: #ffffff;
+                font-family: Arial, sans-serif;
+                text-align: center;
+                padding-top: 50px;
+                animation: wave 10s infinite;
+            }}
+            h1 {{
+                font-size: 48px;
+                animation: glow 2s ease-in-out infinite alternate;
+            }}
+            @keyframes glow {{
+                from {{ text-shadow: 0 0 10px #fff, 0 0 20px #00f, 0 0 30px #0ff; }}
+                to {{ text-shadow: 0 0 20px #fff, 0 0 30px #00f, 0 0 40px #0ff; }}
+            }}
+            @keyframes wave {{
+                0% {{ background-position: 0 0; }}
+                50% {{ background-position: 100% 0; }}
+                100% {{ background-position: 0 0; }}
+            }}
+        </style>
+    </head>
+    <body>
+        <h1>Hello from the Depths of Silfra, {name}!</h1>
+        <p>You’ve dived where continents drift apart!</p>
+        <p>HELLO WORLD!!!</p>
+    </body>
+    </html>
+    """
+    # Ok, to open the HTML content on a web browser, we have to write to a file.
+    with open("hello_world_fissure.html", "w") as f:
+        f.write(html_content)
+
+    # Now, we open it.
+    webbrowser.open("file://" + os.path.realpath("hello_world_fissure.html"))
+
+# Method:           thinking_animation( string )
+# What it Does:     Just kind of adds a slight text animation to give illusion the program is "thinking"
+# Purpose:          Keeps the text-based program interesting I suppose.
+def thinking_animation( custom_message='hmmm' ):
+
     for _ in range ( 10 ):
         time.sleep(0.25)
         print(".", end="", flush=True) # Again, not moving to the next line yet.add()
-    print("hmmm", end='' , flush=True)
+    print(custom_message, end='' , flush=True)
     for _ in range ( 8 ):
         time.sleep(0.25)
         print(".", end="", flush=True) # Again, not moving to the next line yet.add()
-    print("I got it!!!")
-    time.sleep(1)
+
+# Method:           silfra_terminal(string)
+# What it Does:     Builds an ASCII image about going to the Silfra Fissue in Island
+def silfra_terminal(name):
+    print("""
+    ~~~
+     ~ ~~~
+    ~~~   _____
+    ~~~  /     \  <- Tectonic Plates
+    ~~~ /_______\
+    ~~~
+    """)
+    input("Press Enter to dive into the Silfra Fissure, {}!".format(name))
     print()
+    print('This is kind of scary' , end='' , flush=True)
+    thinking_animation( "brr, it's cold" )
+    print(f"You swim between continents, {name}! The water sparkles around you.")
+
 
 # Start the program
 hello_world( False )

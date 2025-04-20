@@ -1,23 +1,22 @@
 # Overview
 
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
+This is a simple Hellow World program that takes the concept to a slightly higher level. The real goal here was to demonstrate the ability to break the binds of writing a Hello World that exists ONLY in the terminal console output, whilst utilizing Visual Studio Code, Github, and Pyhon. Let's call it **Hello World 2.0**.
 
-{Provide a description of your software}
+## Hello World Program
 
-{Describe your purpose for creating this software.}
+ Rather than just a single typical **Hello World** printout, this takes out on a path of adventure of your choice, but you may find that you may escape the bindings of the terminal and find your journey takes you to the cosmos of the web!
 
-{Provide a link to your YouTube demonstration.  It should be a one minute demo of the software running and a walkthrough of the code.}
+
+Watch a video demo here:
 
 [Software Demo Video](http://youtube.link.goes.here)
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
-
-{Describe the programming language that you used}
-
+* Visual Studio Code
+* Git / Github
+* Python 3.13.3 - 64-bit
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [Python 3.13.3 Documentation](https://docs.python.org/3/)
+* [VSC & Github](https://code.visualstudio.com/docs/introvideos/versioncontrol)
