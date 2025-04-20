@@ -5,6 +5,7 @@ import os
 import sys
 import time
 
+print()
 print("Hello World!")
 print()
 
@@ -16,6 +17,8 @@ name = ""
 
 # Let's take this to the next level!
 def hello_world( repeat_adventure ):
+    global name
+
     while True:
         response = ""
         if not repeat_adventure:
@@ -28,9 +31,10 @@ def hello_world( repeat_adventure ):
 
     if response == 'y':
         print()
-        print("Fantastic! This adventure is going to be led by you.\nPlease help choose your destination(s).")
+        print("Fantastic! This adventure is going to be led by you.\nPlease help choose your destination.")
         print()
-        name = get_name()
+        if name == "":
+            name = get_name()
         print()
 
         while True:
@@ -53,7 +57,6 @@ def hello_world( repeat_adventure ):
             print(f'That\'s ok, {name}, you\'re the boss!')
             print()
             thinking_animatioin()
-
 
 
     else:
@@ -130,8 +133,14 @@ def build_webpage( name=""):
 def thinking_animatioin():
     print('Thinking of what to do next' , end='' , flush=True) # Essentially we are printing a message, but not going to a new line.
     for _ in range ( 10 ):
-        time.sleep(0.2)
+        time.sleep(0.25)
         print(".", end="", flush=True) # Again, not moving to the next line yet.add()
+    print("hmmm", end='' , flush=True)
+    for _ in range ( 8 ):
+        time.sleep(0.25)
+        print(".", end="", flush=True) # Again, not moving to the next line yet.add()
+    print("I got it!!!")
+    time.sleep(1)
     print()
 
 # Start the program
